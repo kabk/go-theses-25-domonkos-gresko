@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'trattatello';
-  src: url('/assets/fonts/trattatello.ttf');
+  src: url('../fonts/trattatello.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: 'main sans';
-  src: url('/assets/fonts/BreweryNo2CYR-Bold.otf');
+  src: url('../fonts/BreweryNo2CYR-Bold.otf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -197,7 +197,7 @@ body {
   left: 2dvw;
   width: 96dvw;
   height: 80dvh;
-  background: url('/assets/images/book2.png') no-repeat center center;
+  background: url('../images/book2.png') no-repeat center center;
   background-size: 100% 100%;
   mix-blend-mode: difference;
   pointer-events: none;
