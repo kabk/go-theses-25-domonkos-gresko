@@ -1,0 +1,617 @@
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+  font-family: 'trattatello';
+  src: url('/assets/fonts/trattatello.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'main sans';
+  src: url('/assets/fonts/BreweryNo2CYR-Bold.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.custom-font alt-letters {
+  font-family: 'trattatello', sans-serif;
+  font-feature-settings: 'salt' 1, 'ss01' 1; /* Enable stylistic alternates */
+}
+
+
+/* .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  margin-left: 0vw !important;
+  z-index: 100;
+}
+
+.lettering {
+  display: block;
+  width: 70vw; 
+  height: 70vh;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.lettering {
+  padding-top: 10vh;
+  width: 20rem;
+  min-width: 100px;
+  display: block;
+  margin: 0 auto;
+  z-index: 100;
+  opacity: 0.8;
+}
+
+@media (min-width: 1000px) {
+  .lettering {
+    width: 30rem;
+  }
+}
+
+.rolle-img {
+width: 3rem;
+min-width: 100px;
+display: block;
+filter: grayscale(50%);
+/* margin: 0 auto; */
+z-index: -10;
+opacity: 0.3;
+margin: 1em auto;
+}
+
+.kodwo-img {
+  width: 19rem;
+  min-width: 100px;
+  display: block;
+  filter: grayscale(80%);
+  /* margin: 0 auto; */
+  z-index: -10;
+  opacity: 0.3;
+  margin: 1em auto;
+}
+
+@media (min-width: 1000px) {
+  .kodwo-img {
+    width: 40rem;
+  }
+}
+
+.aengus-img {
+  width: 13rem;
+  min-width: 100px;
+  display: block;
+  filter: grayscale(50%);
+  /* margin: 0 auto; */
+  z-index: -10;
+  opacity: 0.15;
+  margin: 1em auto;
+}
+
+/* .embryo-img {
+  width: 13rem;
+  min-width: 100px;
+  display: block;
+  filter: grayscale(50%);
+  z-index: -10;
+  opacity: 0.5;
+  margin: 1em auto;
+} */
+
+.bg-img {
+top: 0vh;
+left: 0vw;
+width: 100vw;
+height: 100vh;
+display: block;
+position: fixed;
+z-index: 1000;
+opacity: 0.3;
+pointer-events: none;
+}
+
+/* VARIABLES */
+
+:root {
+  /* Color values */
+  --color-background: rgb(32, 32, 32);
+  --color-text: rgb(216, 212, 227);
+  --color-text-link: #b381a7;
+  /* --color-text-link-hover: rgba(225, 60, 0, 0.4); */
+  /* Font values */
+  --font-text: 'main sans', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 24px;
+  /* Margin value */
+  /* --margin: 1rem; */
+}
+
+
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+  position: relative;
+  /* text-align: justify; */
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width: 90%;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* from tufte.css */
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-left: 12.5%; */
+  max-width: 1000px;
+  counter-reset: sidenote-counter;
+  line-height: 1.5 !important;
+  hyphens: auto;
+}
+
+@media (min-width: 1000px) {
+  body {
+    width: 50%;
+  }
+}
+
+/* header {
+  text-align: center;
+  padding: none !important;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.png-mask {
+  position: fixed;
+  top: 0dvh;
+  bottom: -8dvh;
+  left: 2dvw;
+  width: 96dvw;
+  height: 80dvh;
+  background: url('/assets/images/book2.png') no-repeat center center;
+  background-size: 100% 100%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 2000;
+  transition: height 0.4s ease-in-out;
+}
+/* 
+@media (min-width: 1000px) {
+  .png-mask {
+    width: 50vw;
+  }
+} */
+
+
+
+.mask-container {
+  position: fixed;
+  top: 0;
+  /* bottom: 0; */
+  left: 5vw;
+  /* transform: translate(-50%, -50%); */
+  width: 90vw;
+  /* height: 100vh; */
+  pointer-events: none; /* Allow clicks through */
+  mix-blend-mode: difference; /* Core effect */
+  /* background-size: 100% 100%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.mask {
+  /* width: 100%; */
+  /* height: 100%; */
+  /* background-size: 100% 100%; */
+  fill: cyan;
+  /* fill: color-mix(in srgb, cyan 100%, black 0%); */
+}
+
+
+/* p {
+text-align: justify;
+hyphens: auto;
+} */
+
+h1 {
+/* hyphens: none; */
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: none;
+}
+
+.custom-font {
+  font-family: 'trattatello';
+  text-align: left;
+  display: block; /* Forces it to be on a new line */
+  margin-bottom: 20px; /* Adds some space after it */
+  line-height: 1.8;
+}
+
+.custom-font-table-of-content {
+  font-family: 'trattatello';
+  text-align: left;
+}
+
+
+
+.highlight {
+  background-color: rgba(179, 129, 167, 0.2);
+  padding: 0.1em 0.2em;
+}
+
+
+
+
+
+/* .rectangle {
+  width: 20em;
+  min-width: 100px;
+  height: 20em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  margin: 1em auto;
+  flex-direction: column;
+} */
+
+.rectangle {
+  width: 20em;
+  min-width: 100px;
+  height: 20em;
+  opacity: 0.9;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  margin: 1em auto;
+  flex-direction: column;
+}
+
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  opacity: 0.4;
+  object-fit: contain; /* Ensures the image covers the entire div */
+  z-index: -100; /* Moves the image behind the other content */
+}
+
+.button-wrapper {
+  width: 2em;
+  height: 2em;
+  background-color: #b381a7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.play-button {
+  width: 3em;
+  height: 3em;
+  background: none;
+  border: none;
+  /* color: rgb(255, 255, 255); */
+  /* font-size: 24px; */
+  cursor: pointer;
+  transform: rotate(-90deg);
+  color: #4c7e58;
+  z-index: 10000;
+}
+
+.progress-bar {
+  position: absolute;
+  width: 100%;
+  height: 0.5em;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #b381a7;
+  z-index: 1;
+}
+
+.progress {
+  height: 100%;
+  background: white;
+  width: 0%;
+}
+
+
+
+/* prev audio stuff */
+
+      /* .container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10%;
+        width: 80%;
+        align-items: stretch;
+        z-index: 1;
+      }
+      .rectangle {
+        width: 60%;
+        background-color: #555;
+        transform: rotate(90deg);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      #audio1 {
+        width: 100%;
+        z-index: 100;
+      } */
+
+
+
+
+/* PAGE STYLES */
+
+/* page structure */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* navigation */
+
+nav {}
+
+/* content */
+
+main {}
+
+summary {}
+
+
+
+
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+/* .desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+} */
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* responsive typeface for various breaking points, sets the default 'rem' value */
+@media (max-width: 299px) {
+  :root {
+    --font-size: 10px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 300px) and (max-width: 339px) {
+  :root {
+    --font-size: 13px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 340px) and (max-width: 440px) {
+  :root {
+    --font-size: 15px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+}
+
+@media (min-width: 441px) and (max-width: 779px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 1201px) and (max-width: 1320px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 1321px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+
+
+  /* utility classes, mobile */
+
+  /* .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  } */
+
+}
+
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
+
+/**************************
+ * BASIC CHECKBOX EXAMPLE *
+ **************************/
+
+ /* fieldset {
+  padding: 1rem;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  line-height: 1;
+ }
+
+fieldset > input.submit-button {
+  justify-self: end;
+ }
+
+ #yes:checked + span {
+  background-color: palegreen;
+ } */
+
+/******************
+ * FROM TUFTE.CSS *
+ ******************/
+
+/* body {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  max-width: 1400px;
+  counter-reset: sidenote-counter;
+} */
+
