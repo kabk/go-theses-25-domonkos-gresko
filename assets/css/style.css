@@ -21,15 +21,15 @@
 
 @font-face {
   font-family: 'main sans';
-  src: url('../fonts/BreweryNo2CYR-Bold.otf');
+  src: url('../fonts/BreweryNo2CYR-Light.otf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-.custom-font alt-letters {
+.custom-font {
   font-family: 'trattatello', sans-serif;
-  font-feature-settings: 'salt' 1, 'ss01' 1; /* Enable stylistic alternates */
+  font-feature-settings: 'salt' 1, 'ss01' 1; 
 }
 
 
