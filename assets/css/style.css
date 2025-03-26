@@ -12,8 +12,8 @@
 
 @font-face {
   font-family: 'trattatello';
-  src: url('../fonts/Trattatello.woff') format('woff)'),
-  url('../fonts/Trattatello.woff2') format('woff2)');
+  src: url('../fonts/Trattatello.woff'),
+  url('../fonts/Trattatello.woff2');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -29,7 +29,6 @@
 
 .custom-font {
   font-family: 'trattatello', sans-serif;
-  font-feature-settings: 'salt' 1, 'ss01' 1; 
 }
 
 
@@ -96,7 +95,7 @@ margin: 1em auto;
 
 @media (min-width: 1000px) {
   .kodwo-img {
-    width: 40rem;
+    width: 35rem;
   }
 }
 
@@ -148,7 +147,16 @@ pointer-events: none;
   /* --margin: 1rem; */
 }
 
+::selection {
+  background-color: #1d335b; /* Custom background color */
+  color: #000000; /* Custom text color */
+}
 
+/* For Mozilla Firefox */
+::-moz-selection {
+  background-color: #ff5733;
+  color: #ffffff;
+}
 
 /* GENERAL STYLES */
 
