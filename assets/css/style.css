@@ -27,10 +27,6 @@
   font-display: block;
 }
 
-.custom-font {
-  font-family: 'trattatello', sans-serif;
-}
-
 
 /* .title-container {
   display: flex;
@@ -164,6 +160,7 @@ html {
   font: var(--font-size) var(--font-family);
   color: var(--color-text);
   background-color: var(--color-background);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -185,6 +182,10 @@ body {
   counter-reset: sidenote-counter;
   line-height: 1.5 !important;
   hyphens: auto;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 1000px) {
@@ -262,11 +263,50 @@ a:hover {
   line-height: 1.8;
 }
 
-.custom-font-table-of-content {
+.info {
+  color: #000000;
+  padding-top: 7em;
+  padding-bottom: 17em;
   font-family: 'trattatello';
-  text-align: left;
+  text-align: center;
+  line-height: 2;
 }
 
+.info-alternative-characters {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
+
+.info-alternative-characters-2 {
+  font-feature-settings: 'salt' 1, 'ss01' 2;
+}
+
+.custom-font-table-of-content-title {
+  font-family: 'trattatello';
+  font-size: 2em;
+  display: inline; /* So highlight only covers the text */
+  line-height: 3;
+  font-feature-settings: 'salt' 1, 'ss01' 2; 
+}
+
+.custom-font-table-of-content {
+  font-family: 'trattatello';
+  display: inline; /* So highlight only covers the text */
+  background-color:rgb(151, 199, 220, 0.2); /* Example highlight */
+  padding: 0.1em 0.5em;
+  line-height: 3;
+}
+
+nav ul {
+  text-align: center;
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+  padding-bottom: 7em;
+}
+
+/* nav {
+margin-top: 1000px;
+} */
 
 
 .highlight {
@@ -274,8 +314,21 @@ a:hover {
   padding: 0.1em 0.2em;
 }
 
+.alternative-character-1 {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
 
+.alternative-character-2 {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
 
+.alternative-character-3 {
+  font-feature-settings: 'salt' 5, 'ss01' 2;
+}
+
+.alternative-character-4 {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
 
 
 /* .rectangle {
