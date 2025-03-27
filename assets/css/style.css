@@ -269,7 +269,7 @@ a:hover {
   padding-bottom: 17em;
   font-family: 'trattatello';
   text-align: center;
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .info-alternative-characters {
@@ -468,6 +468,41 @@ summary {}
 
 
 
+#introduction {
+  margin-top: 3em;
+}
+
+#one-minute-counter-reality {
+  margin-top: 3em;
+}
+
+#the-sonic-matter {
+  margin-top: 3em;
+}
+
+#immaterial-interlude {
+  margin-top: 3em;
+}
+
+#the-sonic-ghost {
+  margin-top: 3em;
+}
+
+#listening {
+  margin-top: 3em;
+}
+
+#outro-conclusion {
+  margin-top: 3em;
+}
+
+#outro-conclusion-end {
+  margin-bottom: 4em;
+}
+
+#references {
+  margin-top: 3em;
+}
 
 
 
