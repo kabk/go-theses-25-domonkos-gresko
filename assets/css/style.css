@@ -264,7 +264,7 @@ a:hover {
 }
 
 .info {
-  color: #97C7DC;
+  color: rgb(151, 199, 220, 0.5);
   padding-top: 7em;
   padding-bottom: 17em;
   font-family: 'trattatello';
