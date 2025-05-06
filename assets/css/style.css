@@ -61,6 +61,19 @@
   opacity: 0.8;
 }
 
+.aengus_icon {
+  /* padding-top: 10vh; */
+  width: 5rem;
+  min-width: 70px;
+  /* display: flex; */
+  position: fixed;
+  /* margin: 0 auto; */
+  left: 0em !important; 
+  z-index: 300000;
+  opacity: 0.8;
+  /* pointer-events: none; */
+}
+
 @media (min-width: 1000px) {
   .lettering {
     width: 30rem;

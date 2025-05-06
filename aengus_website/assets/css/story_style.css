@@ -1,0 +1,606 @@
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+  font-family: 'trattatello';
+  src: url('../fonts/Trattatello.woff'),
+  url('../fonts/Trattatello.woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'main sans';
+  src: url('../fonts/BreweryNo2CYR-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* VARIABLES */
+
+:root {
+  /* Color values */
+  --color-background: rgb(32, 32, 32);
+  --color-text: rgb(216, 212, 227);
+  --color-text-link: #97C7DC;
+  /* --color-text-link-hover: rgba(225, 60, 0, 0.4); */
+  /* Font values */
+  --font-text: 'main sans', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 24px;
+  /* Margin value */
+  /* --margin: 1rem; */
+}
+
+::selection {
+  background-color: #97C7DC; /* Custom background color */
+  color: #000000; /* Custom text color */
+}
+
+/* For Mozilla Firefox */
+::-moz-selection {
+  background-color: #97C7DC;
+  color: #000000;
+}
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  /* text-align: justify; */
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  font-family: 'main sans', sans-serif;
+  color: var(--color-text);
+  width: 90%;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* from tufte.css */
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-left: 12.5%; */
+  max-width: 1000px;
+  counter-reset: sidenote-counter;
+  line-height: 1.5 !important;
+  hyphens: auto;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  body {
+    width: 50%;
+  }
+}
+
+/* header {
+  text-align: center;
+  padding: none !important;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.png-mask {
+  position: fixed;
+  top: 0dvh;
+  bottom: -8dvh;
+  left: 2dvw;
+  width: 96dvw;
+  height: 80dvh;
+  background: url('../images/book2.png') no-repeat center center;
+  background-size: 100% 100%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 2000;
+  transition: height 0.4s ease-in-out;
+}
+/* 
+@media (min-width: 1000px) {
+  .png-mask {
+    width: 50vw;
+  }
+} */
+
+
+
+.mask-container {
+  position: fixed;
+  top: 0;
+  /* bottom: 0; */
+  left: 5vw;
+  /* transform: translate(-50%, -50%); */
+  width: 90vw;
+  /* height: 100vh; */
+  pointer-events: none; /* Allow clicks through */
+  mix-blend-mode: difference; /* Core effect */
+  /* background-size: 100% 100%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+
+h1 {
+/* hyphens: none; */
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: none;
+}
+
+.custom-font {
+  font-family: 'trattatello';
+  text-align: left;
+  display: block; /* Forces it to be on a new line */
+  margin-bottom: 20px; /* Adds some space after it */
+  line-height: 1.8;
+}
+
+.info {
+  color: rgb(151, 199, 220, 0.5);
+  padding-top: 7em;
+  padding-bottom: 17em;
+  font-family: 'trattatello';
+  text-align: center;
+  line-height: 1.9;
+}
+
+.info-alternative-characters {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
+
+.info-alternative-characters-2 {
+  font-feature-settings: 'salt' 1, 'ss01' 2;
+}
+
+.custom-font-table-of-content-title {
+  font-family: 'trattatello';
+  font-size: 2em;
+  display: inline; /* So highlight only covers the text */
+  line-height: 3;
+  font-feature-settings: 'salt' 1, 'ss01' 2; 
+}
+
+.custom-font-table-of-content {
+  font-family: 'trattatello';
+  display: inline; /* So highlight only covers the text */
+  background-color:rgb(151, 199, 220, 0.2); /* Example highlight */
+  padding: 0.1em 0.5em;
+  line-height: 3;
+}
+
+nav ul {
+  text-align: center;
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+  padding-bottom: 7em;
+}
+
+/* nav {
+margin-top: 1000px;
+} */
+
+
+.highlight {
+  background-color: rgb(151, 199, 220, 0.2);
+  padding: 0.1em 0.2em;
+}
+
+.alternative-character-1 {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
+
+.alternative-character-2 {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
+
+.alternative-character-3 {
+  font-feature-settings: 'salt' 5, 'ss01' 2;
+}
+
+.alternative-character-4 {
+  font-feature-settings: 'salt' 4, 'ss01' 2;
+}
+
+
+/* .rectangle {
+  width: 20em;
+  min-width: 100px;
+  height: 20em;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  margin: 1em auto;
+  flex-direction: column;
+} */
+
+.rectangle {
+  width: 20em;
+  min-width: 100px;
+  height: 20em;
+  opacity: 0.9;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  margin: 1em auto;
+  flex-direction: column;
+}
+
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  opacity: 0.4;
+  object-fit: contain; /* Ensures the image covers the entire div */
+  z-index: -100; /* Moves the image behind the other content */
+}
+
+.button-wrapper {
+  width: 2em;
+  height: 2em;
+  background-color: #97C7DC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.play-button {
+  width: 3em;
+  height: 3em;
+  background: none;
+  border: none;
+  /* color: rgb(255, 255, 255); */
+  /* font-size: 24px; */
+  cursor: pointer;
+  transform: rotate(-90deg);
+  color: #2f2f2f;
+  z-index: 10000;
+}
+
+.progress-bar {
+  position: absolute;
+  width: 100%;
+  height: 0.5em;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #97C7DC;
+  z-index: 1;
+}
+
+.progress {
+  height: 100%;
+  background: #2f2f2f;
+  width: 0%;
+}
+
+
+
+/* prev audio stuff */
+
+      /* .container {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10%;
+        width: 80%;
+        align-items: stretch;
+        z-index: 1;
+      }
+      .rectangle {
+        width: 60%;
+        background-color: #555;
+        transform: rotate(90deg);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      #audio1 {
+        width: 100%;
+        z-index: 100;
+      } */
+
+
+
+
+/* PAGE STYLES */
+
+/* page structure */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* navigation */
+
+nav {}
+
+/* content */
+
+main {}
+
+summary {}
+
+
+
+#introduction {
+  margin-top: 3em;
+}
+
+#one-minute-counter-reality {
+  margin-top: 3em;
+}
+
+#the-sonic-matter {
+  margin-top: 3em;
+}
+
+#immaterial-interlude {
+  margin-top: 3em;
+}
+
+#the-sonic-ghost {
+  margin-top: 3em;
+}
+
+#listening {
+  margin-top: 3em;
+}
+
+#outro-conclusion {
+  margin-top: 3em;
+}
+
+#outro-conclusion-end {
+  margin-bottom: 4em;
+}
+
+#references {
+  margin-top: 3em;
+}
+
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+/* .desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+} */
+
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* responsive typeface for various breaking points, sets the default 'rem' value */
+@media (max-width: 299px) {
+  :root {
+    --font-size: 10px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 300px) and (max-width: 339px) {
+  :root {
+    --font-size: 13px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 340px) and (max-width: 440px) {
+  :root {
+    --font-size: 15px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+}
+
+@media (min-width: 441px) and (max-width: 779px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+}
+
+@media (min-width: 780px) and (max-width: 992px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 1201px) and (max-width: 1320px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+@media (min-width: 1321px) {
+  :root {
+    --font-size: 18px;
+  }
+
+  html,
+  body {
+    font: var(--font-size) var(--font-text);
+  }
+
+}
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+
+  /* your 'mobile' overriding css properties here */
+
+
+
+  /* utility classes, mobile */
+
+  /* .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  } */
+
+}
+
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+  /* your overriding css properties here */
+
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+
+}
+
+/**************************
+ * BASIC CHECKBOX EXAMPLE *
+ **************************/
+
+ /* fieldset {
+  padding: 1rem;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  line-height: 1;
+ }
+
+fieldset > input.submit-button {
+  justify-self: end;
+ }
+
+ #yes:checked + span {
+  background-color: palegreen;
+ } */
+
+/******************
+ * FROM TUFTE.CSS *
+ ******************/
+
+/* body {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  max-width: 1400px;
+  counter-reset: sidenote-counter;
+} */
+

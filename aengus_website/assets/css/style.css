@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'brewery';
+  src: url('/assets/fonts/BreweryNo2CYR-Light.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-color] {
+  transition: all 0.3s ease;
+}
+
+#posterGallery {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#posterGallery.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
